@@ -1,15 +1,20 @@
 import { getPizzas } from './fetch-utils.js';
 import { renderPizza } from './render-utils.js';
 
+import { getClothings } from './fetch-utils.js';
+import { renderClothes } from './render-utils.js';
+
 //set event listeners
   //get user input
   //use user input to update state
   //update DOM to reflect the new state
 const pizzasListEl = document.querySelector('.pizzas-list');
+const clothesListEl = document.querySelector('.clothes-list');
 
 window.addEventListener('load', async () => {
   //call function
     fetchAndDisplayPizzas();
+    fetchAndDisplayClothes();
 });
 
 async function fetchAndDisplayPizzas() {
@@ -25,5 +30,15 @@ async function fetchAndDisplayPizzas() {
 
       //append each pizza
         pizzasListEl.append(pizzaEl);
+    }
+}
+
+async function fetchAndDisplayClothes() {
+    const clothes = await getClothings();
+
+    for (let clothe of clothes) {
+        const clotheEl = renderClothes(clothe);
+
+        clothesListEl.append(clotheEl);
     }
 }

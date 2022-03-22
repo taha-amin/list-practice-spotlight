@@ -10,3 +10,11 @@ export async function getPizzas() {
 
     return response.body;
 }
+
+export async function getClothings() {
+    const response = await client
+        .from('clothings')
+        .select('*');
+
+    return response.body;
+}

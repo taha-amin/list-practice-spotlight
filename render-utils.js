@@ -28,3 +28,27 @@ export function renderPizza(pizza) {
 
     return pizzaEl;
 }
+
+export function renderClothes(cloth) {
+    const clotheEl = document.createElement('div');
+    const priceEl = document.createElement('p');
+    const brandEl = document.createElement('p');
+    const typeEl = document.createElement('p');
+    const sizeEl = document.createElement('p');
+
+    clotheEl.classList.add('clothe');
+
+    priceEl.textContent = `Price: $${cloth.price}`;
+    brandEl.textContent = cloth.brand;
+    typeEl.textContent = cloth.type;
+    sizeEl.textContent = cloth.size;
+
+    clotheEl.append(
+        priceEl,
+        brandEl,
+        typeEl,
+        sizeEl
+    );
+
+    return clotheEl;
+}
