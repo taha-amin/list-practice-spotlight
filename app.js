@@ -16,6 +16,7 @@ async function fetchAndDisplayPizzas() {
   //the second the page loads
     //fetch pizzas
     const pizzas = await getPizzas();
+    //console.log(pizzas);
 
     //display pizzas
       //loop through pizzas

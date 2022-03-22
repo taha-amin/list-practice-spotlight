@@ -7,7 +7,7 @@ export function renderPizza(pizza) {
 
     pizzaEl.classList.add('pizza');
 
-    priceEl.textContent = pizza.price;
+    priceEl.textContent = `Price: $${pizza.price}`;
     //toppingsEl.textContent = pizza.toppings;
     sizeEl.textContent = pizza.size;
     crustEl.textContent = pizza.crust;
@@ -16,7 +16,7 @@ export function renderPizza(pizza) {
         const li = document.createElement('li');
 
         li.textContent = topping;
-        toppingsEl.appendChild(li);
+        toppingsEl.append(li);
     }
 
     pizzaEl.append(
@@ -25,4 +25,6 @@ export function renderPizza(pizza) {
         sizeEl,
         crustEl
     );
+
+    return pizzaEl;
 }

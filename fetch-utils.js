@@ -8,5 +8,5 @@ export async function getPizzas() {
         .from('pizza')
         .select('*');
 
-    return response;
+    return response.body;
 }
