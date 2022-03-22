@@ -7,6 +7,9 @@ import { renderClothes } from './render-utils.js';
 import { getBooks } from './fetch-utils.js';
 import { renderBooks } from './render-utils.js';
 
+import { getCandies } from './fetch-utils.js';
+import { renderCandies } from './render-utils.js';
+
 //set event listeners
   //get user input
   //use user input to update state
@@ -14,12 +17,14 @@ import { renderBooks } from './render-utils.js';
 const pizzasListEl = document.querySelector('.pizzas-list');
 const clothesListEl = document.querySelector('.clothes-list');
 const booksListEl = document.querySelector('.books-list');
+const candiesListEl = document.querySelector('.candies-list');
 
 window.addEventListener('load', async () => {
   //call function
     fetchAndDisplayPizzas();
     fetchAndDisplayClothes();
     fetchAndDisplayBooks();
+    fetchAndDisplayCandies();
 });
 
 async function fetchAndDisplayPizzas() {
@@ -55,5 +60,15 @@ async function fetchAndDisplayBooks() {
         const bookEl = renderBooks(book);
 
         booksListEl.append(bookEl);
+    }
+}
+
+async function fetchAndDisplayCandies() {
+    const candies = await getCandies();
+
+    for (let candy of candies) {
+        const candyEl = renderCandies(candy);
+
+        candiesListEl.append(candyEl);
     }
 }

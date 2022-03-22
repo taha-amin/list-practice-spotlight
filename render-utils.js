@@ -73,3 +73,24 @@ export function renderBooks(book) {
 
     return bookEl;
 }
+
+export function renderCandies(candy) {
+    const candyEl = document.createElement('div');
+    const nameEl = document.createElement('p');
+    const sloganEl = document.createElement('p');
+    const priceEl = document.createElement('p');
+
+    candyEl.classList.add('candy');
+
+    nameEl.textContent = candy.name;
+    sloganEl.textContent = candy.slogan;
+    priceEl.textContent = candy.price;
+
+    candyEl.append(
+        nameEl,
+        sloganEl,
+        priceEl
+    );
+
+    return candyEl;
+}

@@ -29,3 +29,12 @@ export async function getBooks() {
 
     return response.body;
 }
+
+//exporting candies
+export async function getCandies() {
+    const response = await client
+        .from('candies')
+        .select('*');
+
+    return response.body;
+}
