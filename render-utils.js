@@ -52,3 +52,24 @@ export function renderClothes(cloth) {
 
     return clotheEl;
 }
+
+export function renderBooks(book) {
+    const bookEl = document.createElement('div');
+    const titleEl = document.createElement('h4');
+    const genreEl = document.createElement('p');
+    const pagesEl = document.createElement('p');
+
+    bookEl.classList.add('book');
+
+    titleEl.textContent = book.title;
+    genreEl.textContent = `Genre: ${book.genre}`;
+    pagesEl.textContent = `Number of Pages: ${book.pages}`;
+
+    bookEl.append(
+        titleEl,
+        genreEl,
+        pagesEl
+    );
+
+    return bookEl;
+}
