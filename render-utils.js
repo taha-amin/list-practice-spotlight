@@ -8,9 +8,16 @@ export function renderPizza(pizza) {
     pizzaEl.classList.add('pizza');
 
     priceEl.textContent = pizza.price;
-    toppingsEl.textContent = pizza.toppings;
+    //toppingsEl.textContent = pizza.toppings;
     sizeEl.textContent = pizza.size;
     crustEl.textContent = pizza.crust;
+
+    for (let topping of pizza.toppings) {
+        const li = document.createElement('li');
+
+        li.textContent = topping;
+        toppingsEl.appendChild(li);
+    }
 
     pizzaEl.append(
         priceEl,

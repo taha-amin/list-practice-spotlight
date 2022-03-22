@@ -5,8 +5,8 @@ const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 export async function getPizzas() {
     const response = await client
-        .from('pizzas')
+        .from('pizza')
         .select('*');
 
-    return response.body;
+    return response;
 }
